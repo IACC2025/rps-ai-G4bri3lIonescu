@@ -1,0 +1,7 @@
+numero_ronda,jugador,IA,resultado,racha_victorias_jugador,racha_derrotas_jugador,racha_victorias_IA,racha_derrotas_IA,pct_piedra_jugador,pct_papel_jugador,pct_tijera_jugador,pct_piedra_IA,pct_papel_IA,pct_tijera_IA
+1,piedra,tijera,Victoria,1,0,0,1,100.0,0.0,0.0,0.0,0.0,100.0
+2,papel,piedra,Victoria,2,0,0,2,50.0,50.0,0.0,50.0,0.0,50.0
+3,tijera,papel,Victoria,3,0,0,3,33.33,33.33,33.33,33.33,33.33,33.33
+4,piedra,papel,Derrota,0,1,1,0,50.0,25.0,25.0,25.0,50.0,25.0
+5,tijera,tijera,Empate,0,0,0,0,40.0,20.0,40.0,20.0,40.0,40.0
+6,papel,papel,Empate,0,0,0,0,33.33,33.33,33.33,16.67,50.0,33.33
