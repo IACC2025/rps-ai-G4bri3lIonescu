@@ -1,0 +1,13 @@
+numero_ronda,jugador,IA,resultado,total_pct_piedra_jugador,total_pct_papel_jugador,total_pct_tijera_jugador,total_pct_piedra_IA,total_pct_papel_IA,total_pct_tijera_IA
+1,piedra,papel,Derrota,33.33%,33.33%,33.33%,16.67%,50.00%,33.33%
+2,papel,tijera,Derrota,33.33%,33.33%,33.33%,16.67%,50.00%,33.33%
+3,tijera,papel,Victoria,33.33%,33.33%,33.33%,16.67%,50.00%,33.33%
+4,piedra,papel,Derrota,33.33%,33.33%,33.33%,16.67%,50.00%,33.33%
+5,papel,tijera,Derrota,33.33%,33.33%,33.33%,16.67%,50.00%,33.33%
+6,tijera,piedra,Derrota,33.33%,33.33%,33.33%,16.67%,50.00%,33.33%
+7,tijera,papel,Victoria,33.33%,33.33%,33.33%,16.67%,50.00%,33.33%
+8,piedra,papel,Derrota,33.33%,33.33%,33.33%,16.67%,50.00%,33.33%
+9,papel,tijera,Derrota,33.33%,33.33%,33.33%,16.67%,50.00%,33.33%
+10,tijera,piedra,Derrota,33.33%,33.33%,33.33%,16.67%,50.00%,33.33%
+11,piedra,papel,Derrota,33.33%,33.33%,33.33%,16.67%,50.00%,33.33%
+12,papel,tijera,Derrota,33.33%,33.33%,33.33%,16.67%,50.00%,33.33%
