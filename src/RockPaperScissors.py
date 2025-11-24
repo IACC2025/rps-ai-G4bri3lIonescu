@@ -59,7 +59,7 @@ def obtener_eleccion_ia(historial_usuario, last_user_move, transition_matrix):
 
 def guardar_resultados_csv(historial_partidas):
     """
-    Guarda los datos ronda a ronda en la misma carpeta del script.
+    Guarda los datos ronda a ronda en la carpeta data del proyecto.
     Los porcentajes se guardan como valores numéricos decimales (0-100).
     """
     if not historial_partidas:
@@ -67,9 +67,14 @@ def guardar_resultados_csv(historial_partidas):
         return
 
     try:
-        # 1. Obtener ruta absoluta de la carpeta actual
-        directorio_script = os.path.dirname(os.path.abspath(__file__))
-        nombre_archivo = os.path.join(directorio_script, "resultados_partida.csv")
+        # 1. Definir la ruta específica del proyecto
+        ruta_proyecto = r"C:\Users\Alumno\PycharmProjects\rps-ai-G4bri3lIonescu\data"
+
+        # Crear el directorio si no existe
+        os.makedirs(ruta_proyecto, exist_ok=True)
+
+        # Nombre del archivo
+        nombre_archivo = os.path.join(ruta_proyecto, "resultado_partidas.csv")
 
         # 2. Columnas
         columnas = [
@@ -77,6 +82,10 @@ def guardar_resultados_csv(historial_partidas):
             'jugador',
             'IA',
             'resultado',
+            'racha_victorias_jugador',
+            'racha_derrotas_jugador',
+            'racha_victorias_IA',
+            'racha_derrotas_IA',
             'pct_piedra_jugador',
             'pct_papel_jugador',
             'pct_tijera_jugador',
@@ -95,7 +104,7 @@ def guardar_resultados_csv(historial_partidas):
         print(f"\n Archivo guardado correctamente en:\n{nombre_archivo}")
 
     except IOError as e:
-        print(f" Error al guardar el archivo CSV: {e}")
+        print(f"Error al guardar el archivo CSV: {e}")
 
 
 # --- Función Principal ---
@@ -120,6 +129,11 @@ def jugar_partida():
     victorias_ia = 0
     ronda_actual = 1
     limite_rondas = 50
+
+    # Variables para racha
+    racha_actual_jugador = 0
+    racha_actual_ia = 0
+    ultimo_ganador = None  # 'usuario', 'ia' o 'empate'
 
     while True:
         if ronda_actual > limite_rondas:
@@ -152,13 +166,41 @@ def jugar_partida():
 
         print(f"   Jugador: {jugada_j1} | IA: {jugada_j2} => {res_txt.upper()}")
 
+        # --- ACTUALIZAR RACHAS ---
+        if ganador == 'empate':
+            # Los empates reinician las rachas
+            racha_actual_jugador = 0
+            racha_actual_ia = 0
+            ultimo_ganador = 'empate'
+        elif ganador == 'usuario':
+            # El jugador gana
+            if ultimo_ganador == 'usuario':
+                racha_actual_jugador += 1
+            else:
+                racha_actual_jugador = 1
+            racha_actual_ia = 0
+            ultimo_ganador = 'usuario'
+        else:  # ganador == 'ia'
+            # La IA gana
+            if ultimo_ganador == 'ia':
+                racha_actual_ia += 1
+            else:
+                racha_actual_ia = 1
+            racha_actual_jugador = 0
+            ultimo_ganador = 'ia'
+
+        # Calcular rachas de derrotas (inverso de las victorias)
+        racha_derrotas_jugador = racha_actual_ia if ultimo_ganador == 'ia' else 0
+        racha_derrotas_ia = racha_actual_jugador if ultimo_ganador == 'usuario' else 0
+        # -------------------------
+
         # --- MOSTRAR EFICIENCIA IA ---
         partidas_decisivas = victorias_usuario + victorias_ia
         if partidas_decisivas > 0:
             eficiencia = (victorias_ia / partidas_decisivas) * 100
-            print(f" Eficiencia IA: {eficiencia:.2f}%")
+            print(f"   📊 Eficiencia IA: {eficiencia:.2f}%")
         else:
-            print(f" Eficiencia IA: 0.00%")
+            print(f"   📊 Eficiencia IA: 0.00%")
         # -----------------------------
 
         # Actualizar historial
@@ -181,6 +223,10 @@ def jugar_partida():
             'jugador': jugada_j1,
             'IA': jugada_j2,
             'resultado': res_txt,
+            'racha_victorias_jugador': racha_actual_jugador,
+            'racha_derrotas_jugador': racha_derrotas_jugador,
+            'racha_victorias_IA': racha_actual_ia,
+            'racha_derrotas_IA': racha_derrotas_ia,
             'pct_piedra_jugador': get_pct(c_user, 'piedra', total_jugados),
             'pct_papel_jugador': get_pct(c_user, 'papel', total_jugados),
             'pct_tijera_jugador': get_pct(c_user, 'tijera', total_jugados),
