@@ -1,0 +1,8 @@
+numero_ronda,jugador,IA,resultado,pct_piedra_jugador,pct_papel_jugador,pct_tijera_jugador,pct_piedra_IA,pct_papel_IA,pct_tijera_IA
+1,piedra,papel,Derrota,100.0,0.0,0.0,0.0,100.0,0.0
+2,papel,tijera,Derrota,50.0,50.0,0.0,0.0,50.0,50.0
+3,piedra,tijera,Victoria,66.67,33.33,0.0,0.0,33.33,66.67
+4,tijera,papel,Victoria,50.0,25.0,25.0,0.0,50.0,50.0
+5,papel,papel,Empate,40.0,40.0,20.0,0.0,60.0,40.0
+6,tijera,papel,Victoria,33.33,33.33,33.33,0.0,66.67,33.33
+7,piedra,tijera,Victoria,42.86,28.57,28.57,0.0,57.14,42.86
