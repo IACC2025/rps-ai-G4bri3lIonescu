@@ -1,6 +1,6 @@
 # Documentacion de Recogida de Datos
 
-**Alumno:** ___________________
+**Alumno:** Alin Gabriel Ionescu
 
 ## Formato del CSV
 
@@ -31,7 +31,7 @@ Marca con [x] el metodo usado y describe brevemente:
 
 ### Metodo de recogida:
 
-- [ ] **Programa propio**: Cree un programa para jugar y guardar datos
+- [x] **Programa propio**: Cree un programa para jugar y guardar datos
 - [ ] **Manual**: Jugue partidas y apunte los resultados a mano
 - [ ] **Aplicacion/Web externa**: Use una app y exporte los datos
 - [ ] **Otro**: _________________
@@ -55,7 +55,7 @@ Si capturaste datos extra ademas de los basicos, marcalos aqui:
 - [ ] `tiempo_reaccion_ms` - Tiempo que tardo el jugador en responder
 - [ ] `timestamp` - Fecha/hora de cada jugada
 - [ ] `sesion` - ID de sesion de juego
-- [ ] `resultado` - victoria/derrota/empate
+- [x] `resultado` - victoria/derrota/empate
 - [ ] Otro: _________________
 
 ### Descripcion de datos adicionales:
@@ -78,4 +78,4 @@ Si capturaste datos extra ademas de los basicos, marcalos aqui:
 
 - [ ] **IA Especifica**: Entrenada para ganar a UNA persona concreta
   - Nombre/identificador del oponente: _________________
-- [ ] **IA General**: Entrenada para ganar a cualquier oponente
+- [x] **IA General**: Entrenada para ganar a cualquier oponente
