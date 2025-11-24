@@ -198,9 +198,9 @@ def jugar_partida():
         partidas_decisivas = victorias_usuario + victorias_ia
         if partidas_decisivas > 0:
             eficiencia = (victorias_ia / partidas_decisivas) * 100
-            print(f"   📊 Eficiencia IA: {eficiencia:.2f}%")
+            print(f" Eficiencia IA: {eficiencia:.2f}%")
         else:
-            print(f"   📊 Eficiencia IA: 0.00%")
+            print(f" Eficiencia IA: 0.00%")
         # -----------------------------
 
         # Actualizar historial
