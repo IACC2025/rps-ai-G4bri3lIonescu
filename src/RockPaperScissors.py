@@ -92,10 +92,10 @@ def guardar_resultados_csv(historial_partidas):
             for fila in historial_partidas:
                 writer.writerow(fila)
 
-        print(f"\n✅ Archivo guardado correctamente en:\n{nombre_archivo}")
+        print(f"\n Archivo guardado correctamente en:\n{nombre_archivo}")
 
     except IOError as e:
-        print(f"❌ Error al guardar el archivo CSV: {e}")
+        print(f" Error al guardar el archivo CSV: {e}")
 
 
 # --- Función Principal ---
@@ -123,7 +123,7 @@ def jugar_partida():
 
     while True:
         if ronda_actual > limite_rondas:
-            print(f"\n🛑 Límite de {limite_rondas} rondas alcanzado.")
+            print(f"\n Límite de {limite_rondas} rondas alcanzado.")
             break
 
         print("-" * 50)
@@ -133,7 +133,7 @@ def jugar_partida():
             break
 
         if jugada_j1 not in OPCIONES:
-            print("⚠️ Error: Escribe 'piedra', 'papel' o 'tijera'.")
+            print("Error: Escribe 'piedra', 'papel' o 'tijera'.")
             continue
 
         # Turno IA
@@ -156,9 +156,9 @@ def jugar_partida():
         partidas_decisivas = victorias_usuario + victorias_ia
         if partidas_decisivas > 0:
             eficiencia = (victorias_ia / partidas_decisivas) * 100
-            print(f"   📊 Eficiencia IA: {eficiencia:.2f}%")
+            print(f" Eficiencia IA: {eficiencia:.2f}%")
         else:
-            print(f"   📊 Eficiencia IA: 0.00%")
+            print(f" Eficiencia IA: 0.00%")
         # -----------------------------
 
         # Actualizar historial
