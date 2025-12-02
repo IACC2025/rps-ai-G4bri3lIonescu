@@ -62,13 +62,11 @@ def obtener_eleccion_ia(historial_usuario, transition_matrix):
             # Predicción Markov de 2do orden: Elegir el movimiento más probable después de la secuencia
             prediccion_usuario = max(posibles_siguientes_movimientos,
                                      key=posibles_siguientes_movimientos.get)
-            print("   [IA: Predicción Markov 2do Orden]", end="")
 
     if prediccion_usuario is None:
         # 3. Fallback: Si la secuencia es nueva o no hay datos, usar el movimiento más común de todo el historial.
         conteo_movimientos = Counter(historial_usuario)
         prediccion_usuario = conteo_movimientos.most_common(1)[0][0]
-        print("   [IA: Fallback Frecuencia]", end="")
 
     return encontrar_movimiento_ganador(prediccion_usuario)
 
