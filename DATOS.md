@@ -87,7 +87,7 @@ veces que aparece cada elemento, se calculan los porcentajes y por último se al
 
 ## Estadisticas del dataset
 
-- **Total de rondas:** _____
+- **Total de rondas:** 137
 - **Numero de sesiones/partidas:** 6
 - **Contra cuantas personas diferentes:** 1
 
