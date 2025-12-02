@@ -74,7 +74,7 @@ def guardar_resultados_csv(historial_partidas):
         os.makedirs(ruta_proyecto, exist_ok=True)
 
         # Nombre del archivo
-        nombre_archivo = os.path.join(ruta_proyecto, "resultado_partidas.csv")
+        nombre_archivo = os.path.join(ruta_proyecto, "partidas.csv")
 
         # 2. Columnas
         columnas = [
