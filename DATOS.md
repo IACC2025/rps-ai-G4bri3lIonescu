@@ -42,6 +42,19 @@ Marca con [x] el metodo usado y describe brevemente:
 (Explica aqui como recogiste los datos. Si usaste un programa,
 describe brevemente como funciona. Si fue manual, explica el proceso.)
 
+Los datos han sido recogidos mediante 3 registros:
+
+1 - Entrada Manual del Usuario.
+El programa solicita al usuario introducir una de las 3 opciones disponibles (piedra, papel o tijera).
+
+2 - Respuesta de la IA.
+La IA utiliza un algoritmo basado en Cadenas de Markov para predecir el próximo movimiento del oponente, a su vez
+analiza al historial de jugadas del usuario y construye una matriz de transición que registra el tipo de jugada
+que realiza el oponente despues de cada movimiento.
+
+3 - Registro Automático.
+Cada ronda se guarda en memoria y al terminar la partida (ya sea al llegar a la partida Nº50 o escribiendo "salir"),
+el programa exporta los datos a un archivo .csv.
 
 
 
@@ -56,12 +69,16 @@ Si capturaste datos extra ademas de los basicos, marcalos aqui:
 - [ ] `timestamp` - Fecha/hora de cada jugada
 - [ ] `sesion` - ID de sesion de juego
 - [x] `resultado` - victoria/derrota/empate
-- [ ] Otro: _________________
+- [x] Otro: racha de victorias/derrotas y porcentaje de uso de cada elemento.
 
 ### Descripcion de datos adicionales:
 
 ```
 (Si capturaste datos extra, explica aqui por que y como los usas)
+
+El procentaje de uso de cada elemento se guarda mediante actualizaciones de historial añadiendo cada
+movimiento a la lista donde se acumulan. Lo siguiente es utilizar un Counter para contar la cantidad de 
+veces que aparece cada elemento, se calculan los porcentajes y por último se almacenan en un .csv.
 
 
 ```
@@ -71,8 +88,8 @@ Si capturaste datos extra ademas de los basicos, marcalos aqui:
 ## Estadisticas del dataset
 
 - **Total de rondas:** _____
-- **Numero de sesiones/partidas:** _____
-- **Contra cuantas personas diferentes:** _____
+- **Numero de sesiones/partidas:** 6
+- **Contra cuantas personas diferentes:** 1
 
 ### Tipo de IA:
 
