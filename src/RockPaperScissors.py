@@ -44,7 +44,6 @@ def obtener_eleccion_ia(historial_usuario, transition_matrix):
         # Predecir el movimiento más común de las primeras rondas
         conteo_movimientos = Counter(historial_usuario)
         prediccion_usuario = conteo_movimientos.most_common(1)[0][0]
-        print("   [IA: Estrategia de Arranque]", end="")
         return encontrar_movimiento_ganador(prediccion_usuario)
 
     # 2. Clave para el modelo de 2do orden: (jugada_n-2, jugada_n-1)
@@ -155,7 +154,7 @@ def jugar_partida():
             print(f"\n Límite de {limite_rondas} rondas alcanzado.")
             break
 
-        print("-" * 50)
+        print("-" * 150)
         jugada_j1 = input(f"Ronda {ronda_actual} >> Tu jugada: ").lower().strip()
 
         if jugada_j1 == 'salir':
