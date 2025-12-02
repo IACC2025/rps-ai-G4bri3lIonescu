@@ -142,7 +142,7 @@ def jugar_partida():
     victorias_usuario = 0
     victorias_ia = 0
     ronda_actual = 1
-    limite_rondas = 50
+    limite_rondas = 150
 
     # Variables para racha
     racha_actual_jugador = 0
@@ -154,7 +154,7 @@ def jugar_partida():
             print(f"\n Límite de {limite_rondas} rondas alcanzado.")
             break
 
-        print("-" * 150)
+        print("-" * 50)
         jugada_j1 = input(f"Ronda {ronda_actual} >> Tu jugada: ").lower().strip()
 
         if jugada_j1 == 'salir':
