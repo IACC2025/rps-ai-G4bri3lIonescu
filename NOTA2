@@ -1,0 +1,13 @@
+# Corrección Modo 2 - Revisión de Código
+## Alin Gabriel Ionescu
+
+### Recogida de datos (30%) - 5/10
+El volumen de datos es bajo (50 rondas), lo cual limita el entrenamiento del modelo. El enfoque de usar Cadenas de Markov para la IA durante la recogida es interesante conceptualmente. La documentación del proceso está bien explicada y se entiende el razonamiento detrás de las decisiones tomadas.
+
+### Feature Engineering (30%) - 6.5/10
+Punto positivo: has incluido features precalculadas en el CSV como porcentajes de jugadas y rachas. Esto muestra que has pensado en qué información puede ser útil. Sin embargo, estas features deberían calcularse dinámicamente en el código, no venir fijas del CSV, porque durante la evaluación necesitas calcularlas sobre el historial de la partida actual.
+
+### Modelo (40%) - 6/10
+El código está bien organizado y usa las columnas personalizadas del CSV. La estructura está correcta aunque el rendimiento se ve afectado por el volumen de datos disponible.
+
+## NOTA MODO 2: 6/10
